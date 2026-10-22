@@ -1,12 +1,13 @@
 // ① Firebase 콘솔 > 프로젝트 설정 > 내 앱(웹)에서 복사한 값으로 바꿔 주세요.
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000",
+  apiKey: "AIzaSyBLcLBytx-Tf77qoGeeizbQhtx1dlEHX1s",
+  authDomain: "buzzer-f9e2b.firebaseapp.com",
+  // Realtime Database > 데이터 탭 맨 위에 보이는 주소와 같아야 합니다.
+  databaseURL: "https://buzzer-f9e2b-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "buzzer-f9e2b",
+  storageBucket: "buzzer-f9e2b.firebasestorage.app",
+  messagingSenderId: "987690105667",
+  appId: "1:987690105667:web:5dacfb2a81b0724ee88df6",
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
