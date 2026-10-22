@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>먼저 도전! - 선생님</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="teacher-grid">
+      <main>
+        <section class="card">
+          <h2>도전 진행</h2>
+          <div id="status" class="status-big">준비</div>
+          <div class="row controls">
+            <button id="startBtn" class="primary">▶ 시작 (3·2·1)</button>
+            <button id="closeBtn">⏹ 마감</button>
+            <button id="resetBtn" class="danger">↺ 초기화</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>도전 순서</h2>
+          <ol id="results" class="results"></ol>
+          <p id="noResult" class="muted">아직 도전한 사람이 없어요.</p>
+        </section>
+
+        <section class="card">
+          <h2>참가자 <span id="onlineCount" class="muted"></span></h2>
+          <div id="chips" class="chips"></div>
+        </section>
+      </main>
+
+      <aside>
+        <section class="card">
+          <div class="muted">방 코드</div>
+          <div id="roomCode" class="room-code">----</div>
+          <div class="muted">학생 접속 주소</div>
+          <a id="joinLink" target="_blank" style="word-break: break-all"></a>
+          <div id="qr"></div>
+          <div class="row" style="margin-top: 12px">
+            <button id="newRoomBtn">새 방 만들기</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>참가 방식 설정</h3>
+          <div class="row">
+            <label><input type="radio" name="mode" value="individual" checked> 개인별</label>
+            <label><input type="radio" name="mode" value="group"> 모둠별</label>
+          </div>
+          <div id="individualBox" style="margin-top: 10px">
+            <div class="muted">학생 이름을 한 줄에 한 명씩 입력하세요.</div>
+            <textarea id="names" placeholder="김하늘&#10;이바다&#10;박구름"></textarea>
+          </div>
+          <div id="groupBox" class="hidden" style="margin-top: 10px">
+            <label>모둠 수 <input id="groupCount" type="number" min="1" max="30" value="6" style="width: 90px"></label>
+          </div>
+          <button id="saveConfigBtn" class="primary" style="margin-top: 12px; width: 100%">설정 저장</button>
+          <p id="configInfo" class="muted"></p>
+        </section>
+      </aside>
+    </div>
+  </div>
+  <script type="module" src="teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>먼저 도전! - 학생</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 1단계: 로그인 (방 코드 + 이름/모둠 선택) -->
+  <div id="joinView" class="wrap">
+    <div class="card join">
+      <h2>🙋 도전 입장</h2>
+      <label for="roomInput">방 코드</label>
+      <input id="roomInput" inputmode="numeric" maxlength="6" placeholder="선생님 화면의 숫자">
+      <button id="loadBtn">확인</button>
+
+      <div id="pickBox" class="hidden">
+        <label for="who" id="whoLabel">이름 선택</label>
+        <select id="who"></select>
+        <button id="enterBtn" class="primary">입장하기</button>
+      </div>
+      <p id="joinMsg" class="muted"></p>
+    </div>
+  </div>
+
+  <!-- 2단계: 도전 화면 -->
+  <div id="playView" class="student hidden">
+    <header>
+      <span class="me" id="meName"></span>
+      <button id="leaveBtn">나가기</button>
+    </header>
+    <div class="stage">
+      <div id="countdown" class="countdown hidden"></div>
+      <div id="rankBig" class="rank-big hidden"></div>
+      <div id="message" class="message">선생님이 시작하기를 기다려요</div>
+      <button id="buzzBtn" class="buzz" disabled>도전!</button>
+    </div>
+  </div>
+  <script type="module" src="student.js"></script>
+</body>
+</html>

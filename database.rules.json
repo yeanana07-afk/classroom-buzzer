@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": true,
+        "config": { ".write": true },
+        "round": { ".write": true },
+        "presence": {
+          "$pid": {
+            "$sid": { ".write": true, ".validate": "newData.isBoolean()" }
+          }
+        },
+        "buzzes": {
+          ".write": "!newData.exists()",
+          "$pid": {
+            ".write": "!data.exists() && newData.exists()",
+            ".validate": "newData.hasChildren(['name', 't', 'round']) && newData.child('t').val() == now && root.child('rooms').child($room).child('config/participants').child($pid).exists() && newData.child('round').val() == root.child('rooms').child($room).child('round/id').val() && now >= root.child('rooms').child($room).child('round/openAt').val() && root.child('rooms').child($room).child('round/closed').val() != true"
+          }
+        }
+      }
+    }
+  }
+}
